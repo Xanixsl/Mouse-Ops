@@ -20,19 +20,60 @@
 
 ## 📖 About
 
-Modern automation tool for Windows with advanced mouse and keyboard control. Built for gamers, streamers, and productivity users.
+**Mouse Ops** is a powerful automation tool for Windows with advanced mouse and keyboard control capabilities. Features include auto-clicker, macro recorder, multi-point routes, drag & drop automation, and human-like movement simulation.
 
-## ✨ Features
+## ✨ Key Features
 
-- 🎯 **Auto-clicker** — Customizable CPS, left/right mouse button
-- ⌨️ **Hotkeys** — Flexible configuration (F6, F7, ESC)
-- 🎨 **Modern UI** — Dark theme with glassmorphism effects
+### 🎯 Auto-Clicker
+- Customizable click speed (CPS)
+- Left/Right/Middle mouse buttons
+- Double-click mode
+- Fixed position clicking
+- Action limit counter
+
+### ⌨️ Hotkey System
+- Customizable global hotkeys (F1-F12)
+- Toggle activation (F6 default)
+- Show/Hide window (F7 default)
+- Emergency stop (ESC)
+
+### 🎬 Macro Recording  
+- Record mouse clicks and keyboard actions
+- Playback recorded sequences
+- Save/Load macro profiles
+- Custom delays between actions
+
+### 🗺️ Multi-Point Routes
+- Create click routes with multiple coordinates
+- Set custom delays per point
+- Different actions at each point
+- Loop through routes automatically
+
+### 🖱️ Drag & Drop Automation
+- Automated drag operations
+- Custom start/end coordinates
+- Adjustable drag speed
+
+### 🎲 Human-Like Behavior
+- Natural mouse movement curves
+- Hand tremor simulation
+- Random micro-movements
+- Variable click pressure
+- Fatigue simulation
+- Speed variation
+- Random pauses
+- Overshoot effects
+
+### 🔧 Additional Features
+- 📊 **Statistics** — Real-time action tracking and logs
+- 🔊 **Sound Feedback** — Audio notifications with volume control
+- 💾 **Profiles** — Save/Load different configurations
 - 🌍 **Multi-language** — English and Russian
-- 🔊 **Sound Feedback** — Audio notifications
-- 📊 **Statistics** — Real-time click tracking
-- 🎲 **Humanization** — Natural mouse movement simulation
-- 💾 **Auto-save** — Settings persistence
-- 🖼️ **System Tray** — Background operation
+- 🎨 **Modern UI** — Dark theme with glassmorphism effects
+- 🖼️ **System Tray** — Background operation support
+- 🎯 **Coordinate Picker** — Visual coordinate selection
+- ⏱️ **Timer** — Run for specific duration
+- 🚫 **Anti-AFK** — Random movements to prevent idle
 
 ## 🚀 Installation
 
@@ -51,26 +92,33 @@ pip install -r requirements.txt
 python main.py
 ```
 
-## 📦 Requirements
+## 📦 System Requirements
 
-- Windows 10/11 (64-bit)
-- Python 3.8+ (for source)
+- **OS**: Windows 10/11 (64-bit)
+- **Python**: 3.8+ (for source)
+- **RAM**: 100 MB minimum
+- **Storage**: 50 MB free space
 
 ## 🎮 Default Hotkeys
 
 | Key | Action |
 |-----|--------|
-| `F6` | Toggle auto-clicker |
+| `F6` | Start/Stop automation |
 | `F7` | Show/Hide window |
-| `ESC` | Emergency stop |
+| `ESC` | Emergency stop & cancel selection |
 
-## 🛠️ Technical Details
+## 🛠️ Technical Stack
 
-**Built with:**
+**Core:**
 - Python 3.8+
-- Tkinter (GUI)
-- pynput (automation)
-- sv-ttk (dark theme)
+- Tkinter (GUI framework)
+- pynput (mouse/keyboard automation)
+- sv-ttk (modern dark theme)
+- darkdetect (system theme detection)
+
+**Optional:**
+- pystray (system tray support)
+- Pillow (tray icon generation)
 
 **Dependencies:**
 ```
@@ -81,31 +129,102 @@ Pillow>=10.0.0
 pystray>=0.19.4
 ```
 
-## 📁 Structure
+## 📁 Project Structure
 
 ```
 Mouse-Ops/
-├── main.py           # Main application (3491 lines)
-├── ui/               # UI components (theme, window)
-├── utils/            # Utilities (helpers, sound)
-└── locales/          # Translations (en, ru)
+├── main.py              # Main application (3491 lines)
+│
+├── ui/                  # UI components
+│   ├── __init__.py
+│   ├── theme.py         # Modern theme styles
+│   └── window.py        # Window management
+│
+├── utils/               # Utility modules
+│   ├── __init__.py
+│   ├── helpers.py       # HumanNoise, ToolTip
+│   └── sound.py         # Sound manager
+│
+└── locales/             # Translations
+    ├── en.json          # English
+    └── ru.json          # Russian
+```
+
+## 🎨 Design Features
+
+**Modern 2025-2026 Color Palette:**
+- Electric Purple (#7c5cfc) — Primary accent
+- Mint Teal (#00d4aa) — Success states
+- Coral Pink (#ff6b9d) — Action buttons
+- Dark backgrounds with gradients
+- Glassmorphism effects with transparency
+- Smooth animations and transitions
+
+## 💡 Usage Examples
+
+### Basic Auto-Clicker
+1. Set click delay (e.g., 50ms)
+2. Select mouse button (left/right/middle)
+3. Press F6 to start
+4. Press F6 again or ESC to stop
+
+### Macro Recording
+1. Switch to "Macros" tab
+2. Click "Start Recording"
+3. Perform actions (clicks, keyboard)
+4. Click "Stop Recording"
+5. Save macro with a name
+6. Press F6 to replay
+
+### Multi-Point Route
+1. Go to "Routes" tab
+2. Click "Add Point" and select coordinates
+3. Set delay and action for each point
+4. Click "Start Route"
+5. Route will loop through all points
+
+### Human-Like Clicking
+1. Enable "Human-like behavior"
+2. Adjust sliders:
+   - Curviness (movement curves)
+   - Hand Tremor (natural shake)
+   - Micro-movements (small jitters)
+   - Speed Variation (variable timing)
+3. Start automation
+
+## 🔧 Configuration
+
+Settings are automatically saved to:
+```
+%TEMP%\mouse_ops_v5_config.json
+%TEMP%\mouse_ops_v5_profiles.json
+%TEMP%\mouse_ops_v5_macros.json
+%TEMP%\mouse_ops_v5_coords.json
 ```
 
 ## 📜 License
 
-MIT License - see [LICENSE](LICENSE) | [Russian version](docs/ru/LICENSE.md)
+MIT License - see [LICENSE](LICENSE)
+
+**Russian version:** [docs/ru/LICENSE.md](docs/ru/LICENSE.md)
 
 ## 🤝 Contributing
 
-Contributions welcome! Read [CONTRIBUTING.md](CONTRIBUTING.md) | [Russian version](docs/ru/CONTRIBUTING.md)
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## 🐛 Bug Reports
+**Russian version:** [docs/ru/CONTRIBUTING.md](docs/ru/CONTRIBUTING.md)
 
-[Open an issue](../../issues/new) with OS version, steps to reproduce, and screenshots.
+## 🐛 Bug Reports & Feature Requests
+
+[Open an issue](../../issues/new) with details:
+- OS version and Python version
+- Steps to reproduce
+- Expected vs actual behavior
+- Screenshots or error logs
 
 ## 💖 Support the Project
 
-If you find this project useful, consider buying me a coffee:
+If you find Mouse Ops useful, consider supporting development:
 
 <div align="center">
 
@@ -113,50 +232,3 @@ If you find this project useful, consider buying me a coffee:
 [![Boosty](https://img.shields.io/badge/Donate-Boosty-8A2BE2?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDIyQzE3LjUyMjggMjIgMjIgMTcuNTIyOCAyMiAxMkMyMiA2LjQ3NzE1IDE3LjUyMjggMiAxMiAyQzYuNDc3MTUgMiAyIDYuNDc3MTUgMiAxMkMyIDE3LjUyMjggNi40NzcxNSAyMiAxMiAyMloiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==)](https://boosty.to/saylontoff/donate)
 
 </div>
-
----
-
-<div align="center">
-
-**Made with ❤️ by Mouse Ops Team**
-
-⭐ Star this repo if you find it useful!
-
-</div>
-
-## 🔧 Зависимости
-
-```
-tkinter (встроен в Python)
-sv-ttk
-darkdetect
-pynput
-pystray (опционально)
-Pillow (опционально)
-```
-
-## 📝 Изменения
-
-### Версия B-2.0 (2025)
-- ✨ Полностью переработанный модерный дизайн
-- 📦 Модульная структура проекта
-- 🎨 Тема в стиле 2025-2026 (glassmorphism, градиенты)
-- 🔧 Улучшенная архитектура кода
-- 🎯 Сохранена вся функциональность оригинала
-
-### Версия B-1.0 (2024)
-- Удален пиксельный триггер
-- Удалена светлая тема
-- Язык по умолчанию EN
-- Базовый современный дизайн
-
-## 🎯 Рекомендации
-
-- Используйте **main.py** для полного функционала (макросы, координаты, профили, etc.)
-- Используйте **main_modern.py** для простого и быстрого автокликера с крутым дизайном
-- Оба файла используют одни и те же модули из `utils/` и `ui/`
-
-## 📧 Контакты
-
-TikTok: [@saylont](https://www.tiktok.com/@saylont)
-GitHub: [Xanixsl/Mouse-Ops](https://github.com/Xanixsl/Mouse-Ops)
